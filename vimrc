@@ -102,9 +102,11 @@ autocmd VimResized * wincmd = " resize splits when window size changes
 autocmd BufWritePre * :%s/\s\+$//e " remove trailing whitespace on save
 
 " ================ Completion =======================
+set wildmode=longest,list
+set wildmenu
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem " disable output and VCS files
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz       " disable archive files
-set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*  " ignore bundler and sass cache
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*,bundle  " ignore bundler and sass cache
 set wildignore+=*/public/system/*  " ignore assets
 set wildignore+=*.swp,*~,._*       " ignore temp and backup files
 
