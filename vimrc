@@ -20,7 +20,10 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-rails'
 Bundle 'kien/ctrlp.vim'
+" ================== ACK! ======================
 Bundle 'mileszs/ack.vim'
+map <leader>a :Ack!<space>
+map <leader>A :Ack! <C-R><C-W><CR>
 
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-rails'
@@ -104,11 +107,14 @@ autocmd BufWritePre * :%s/\s\+$//e " remove trailing whitespace on save
 " ================ Completion =======================
 set wildmode=longest,list
 set wildmenu
-set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem " disable output and VCS files
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem,public/javascripts/compiled " disable output and VCS files
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz       " disable archive files
-set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*,bundle  " ignore bundler and sass cache
-set wildignore+=*/public/system/*  " ignore assets
-set wildignore+=*.swp,*~,._*       " ignore temp and backup files
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*,bundle,jhw-cache  " ignore bundler and sass cache
+set wildignore+=*/public/system/*,public/javascripts/compiled  " ignore assets
+set wildignore+=*.swp,tmp,*~,._*       " ignore temp and backup files
+set wildignore+=*.orig,*.jpg,*.png,*.gif
+set wildignore+=log,solr
+set wildignore+=bundler_stubs,build,error_pages
 
 " ================ Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.

@@ -19,3 +19,4 @@
 --ignore-dir=.sass-cache
 --ignore-dir=log
 --ignore-dir=coverage
+--ignore-dir=error_pages
