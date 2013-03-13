@@ -67,6 +67,23 @@ set noerrorbells
 set backspace=indent,eol,start    " allow backspace in insert mode
 set laststatus=2                  " always show the status bar
 
+" ====== Statusline =============================
+function! InsertStatuslineColor(mode)
+  if a:mode == 'i'
+    hi statusline ctermfg=1 ctermbg=251
+  elseif a:mode == 'r'
+    hi statusline ctermfg=5 ctermbg=251
+  else
+    hi statusline ctermfg=82 ctermbg=232
+  end
+endfunction
+
+au InsertEnter * call InsertStatuslineColor(v:insertmode)
+au InsertLeave * hi statusline ctermfg=82 ctermbg=232
+
+" default the statusline to green when entering Vim
+hi statusline ctermfg=82 ctermbg=232
+
 " ====== Whitespace / Indentation ===============
 set nowrap               " don't wrap lines
 set tabstop=2            " a tab is two spaces
