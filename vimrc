@@ -19,7 +19,13 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-rails'
+
+" ================= CTRL-P =====================
 Bundle 'kien/ctrlp.vim'
+
+map <leader>f :let g:ctrlp_default_input = 0<cr>:CtrlP<cr>
+map <leader><leader>f :let g:ctrlp_default_input = 0<cr>:CtrlPClearCache<cr>:CtrlP<cr>
+
 " ================== ACK! ======================
 Bundle 'mileszs/ack.vim'
 map <leader>a :Ack!<space>
