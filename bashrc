@@ -35,6 +35,7 @@ alias mongrel="if [ -f script/server ] ; then script/server mongrel; else script
 
 alias load=". ~/.bash_profile"
 alias vim="mvim -v"
+alias vimcolors="perl ~/.vim/.vim-256color.pl"
 
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
