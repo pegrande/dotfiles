@@ -2,7 +2,7 @@
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-export PATH=/usr/local/bin/psql:$PATH
+export PATH=/usr/local/bin:/usr/local/bin/psql:$PATH
 export PATH=$PATH\:~/SDKs/android-sdk-macosx/tools:~/SDKs/android-sdk-macosx/platform-tools
 export ANDROID_HOME="/Users/jeff/SDKs/android-sdk-macosx"
 
