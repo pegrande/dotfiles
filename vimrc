@@ -41,6 +41,25 @@ Bundle 'vim-scripts/bufkill.vim'
 " it, and close vim if it's the last buffer/split. Use ,w
 Bundle 'nathanaelkane/vim-command-w'
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vroom
+"
+" Run specs or cucumber features with ,t run only the test under the cursor
+" with ,T also remembers last run test so you can hit it again on non-test
+" files to run the last run test
+"
+" Using my fork until: https://github.com/skalnik/vim-vroom/pull/33
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'aaronjensen/vim-vroom'
+
+let g:vroom_map_keys = 0
+let g:vroom_write_all = 1
+let g:vroom_use_bundle_exec = 0
+let g:vroom_spec_command = '`([ -e .zeus.sock ] && echo zeus) || echo bundle exec` rspec '
+let g:vroom_cucumber_path = '`([ -e .zeus.sock ] && echo zeus) || echo bundle exec` cucumber -r features '
+map <leader>t :VroomRunTestFile<cr>
+map <leader>T :VroomRunNearestTest<cr>
+
 syntax on " turn on syntax highlighting
 filetype plugin indent on
 
@@ -71,6 +90,7 @@ set visualbell                    " don't beep
 set noerrorbells
 set backspace=indent,eol,start    " allow backspace in insert mode
 set laststatus=2                  " always show the status bar
+set ttimeoutlen=5
 
 " ====== Statusline =============================
 function! InsertStatuslineColor(mode)
