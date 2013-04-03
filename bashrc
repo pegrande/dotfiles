@@ -24,7 +24,13 @@ alias branch="git branch"
 alias remote="git branch -r"
 alias master="git checkout master"
 
+alias mi="script/mergeq integration"
+alias mdev="script/mergeq develop"
+alias mc="script/mergeq --continue"
+alias pf="script/push"
+
 alias bi="bundle install --standalone --binstubs bundle/bin"
+alias bakedb="bundle exec rake db:migrate db:test:prepare"
 alias be="bundle exec"
 alias beg="bundle exec guard"
 alias speck="bundle exec rake spec verbose=true guard:jasmine"
