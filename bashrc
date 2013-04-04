@@ -36,6 +36,8 @@ alias beg="bundle exec guard"
 alias speck="bundle exec rake spec verbose=true guard:jasmine"
 alias rspeck="bundle exec rspec --format documentation"
 
+alias z='`[ -e .zeus.sock ] && echo zeus || echo SAD: Zeus is not running 1>&2`'
+alias zr='`[ -e .zeus.sock ] && echo zeus || echo rails`'
 alias console="if [ -f script/console ] ; then script/console; else script/rails console ; fi"
 alias server="if [ -f script/server ] ; then script/server; else script/rails server ; fi"
 alias mongrel="if [ -f script/server ] ; then script/server mongrel; else script/rails server mongrel; fi"
@@ -43,6 +45,8 @@ alias mongrel="if [ -f script/server ] ; then script/server mongrel; else script
 alias load=". ~/.bash_profile"
 alias vim="mvim -v"
 alias vimcolors="perl ~/.vim/.vim-256color.pl"
+
+alias tmuxg="tmux new-session -t"
 
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
