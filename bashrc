@@ -38,9 +38,13 @@ alias rspeck="bundle exec rspec --format documentation"
 
 alias z='`[ -e .zeus.sock ] && echo zeus || echo SAD: Zeus is not running 1>&2`'
 alias zr='`[ -e .zeus.sock ] && echo zeus || echo rails`'
+alias zbe='`[ -e .zeus.sock ] && echo zeus || echo bundle exec`'
 alias console="if [ -f script/console ] ; then script/console; else script/rails console ; fi"
 alias server="if [ -f script/server ] ; then script/server; else script/rails server ; fi"
 alias mongrel="if [ -f script/server ] ; then script/server mongrel; else script/rails server mongrel; fi"
+
+alias zdb="zbe rake db:migrate db:test:prepare"
+alias zake="zbe rake"
 
 alias load=". ~/.bash_profile"
 alias vim="mvim -v"

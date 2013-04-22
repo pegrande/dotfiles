@@ -60,6 +60,47 @@ let g:vroom_cucumber_path = '`([ -e .zeus.sock ] && echo zeus) || echo bundle ex
 map <leader>t :VroomRunTestFile<cr>
 map <leader>T :VroomRunNearestTest<cr>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tab to indent or autocomplete depending on context
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'ervandew/supertab'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Fugitive
+"
+" Git in vim, use ,gs for git status then - to stage then C to commit
+" check :help Gstatus for more keys
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'tpope/vim-fugitive'
+
+map <leader>gs :Gstatus<cr>
+map <leader>gc :Gcommit<cr>
+map <leader>ga :Git add --all<cr>:Gcommit<cr>
+map <leader>gb :Gblame<cr>
+
+" Use j/k in status
+function! BufReadIndex()
+  setlocal cursorline
+  setlocal nohlsearch
+
+  nnoremap <buffer> <silent> j :call search('^#\t.*','W')<Bar>.<CR>
+  nnoremap <buffer> <silent> k :call search('^#\t.*','Wbe')<Bar>.<CR>
+endfunction
+autocmd BufReadCmd  *.git/index exe BufReadIndex()
+autocmd BufEnter    *.git/index silent normal gg0j
+
+" Start in insert mode for commit
+function! BufEnterCommit()
+  normal gg0
+  if getline('.') == ''
+    start
+  end
+endfunction
+autocmd BufEnter    *.git/COMMIT_EDITMSG  exe BufEnterCommit()
+
+" Automatically remove fugitive buffers
+autocmd BufReadPost fugitive://* set bufhidden=delete
+
 syntax on " turn on syntax highlighting
 filetype plugin indent on
 
@@ -215,6 +256,7 @@ set scrolloff=8           "Start scrolling when scrolloff lines away from margin
 
 " ============== Auto Commands ==================
 autocmd BufNewFile,BufRead *.json set ft=javascript " treat JSON files like JavaScript
+autocmd BufNewFile,BufRead *.hamlc set ft=haml
 autocmd VimResized * wincmd = " resize splits when window size changes
 autocmd BufWritePre * :%s/\s\+$//e " remove trailing whitespace on save
 
@@ -259,3 +301,11 @@ map <C-l> <C-w>l
 
 " =============== Kill Buffer ===================
 nmap <leader>w :CommandW<cr>
+
+" =============== Alternate leader key ===================
+nmap , <space>
+
+" =============== Copy paste system clipboard ===================
+map <leader>y "*y
+map <leader>p "*p
+map <leader>P "*P
