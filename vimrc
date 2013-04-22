@@ -64,6 +64,7 @@ syntax on " turn on syntax highlighting
 filetype plugin indent on
 
 "================== Colors ======================
+Bundle 'ap/vim-css-color'
 Bundle 'molokai'
 colorscheme molokai
 set t_vb=
@@ -95,19 +96,73 @@ set ttimeoutlen=5
 " ====== Statusline =============================
 function! InsertStatuslineColor(mode)
   if a:mode == 'i'
-    hi statusline ctermfg=1 ctermbg=251
+    hi statusline ctermfg=253 ctermbg=20
   elseif a:mode == 'r'
     hi statusline ctermfg=5 ctermbg=251
   else
-    hi statusline ctermfg=82 ctermbg=232
+    hi statusline ctermfg=112 ctermbg=22
   end
 endfunction
 
 au InsertEnter * call InsertStatuslineColor(v:insertmode)
-au InsertLeave * hi statusline ctermfg=82 ctermbg=232
+au InsertLeave * hi statusline ctermfg=112 ctermbg=22
 
 " default the statusline to green when entering Vim
-hi statusline ctermfg=82 ctermbg=232
+hi statusline ctermfg=112 ctermbg=22
+
+" ======= Status Line Colors ===========================
+hi User0 ctermfg=1 ctermbg=154
+hi User1 ctermfg=113 ctermbg=22
+hi User2 ctermfg=15 ctermbg=236
+
+set statusline=
+set statusline+=%0*\ \%{GetMode()}                        " Mode
+set statusline+=%0*\ \[%n]\                               " Buffer Number
+set statusline+=%1*\ %<%F\                                " File+path
+set statusline+=%1*\ %m%r%w                               " Modified? Readonly?
+set statusline+=%=
+set statusline+=%2*\ %y\                                  " FileType
+set statusline+=%0*\ %l:%c\                               " Row:Column
+set statusline+=%0*\ %P\ \                                " %Scroll
+
+function! GetMode() " {{{
+    let mode = mode()
+    if mode ==# 'v'
+      let mode = "VISUAL"
+    elseif mode ==# 'V'
+      let mode = "V⋅LINE"
+    elseif mode ==# ''
+      let mode = "V⋅BLOCK"
+    elseif mode ==# 's'
+      let mode = "SELECT"
+    elseif mode ==# 'S'
+      let mode = "S⋅LINE"
+    elseif mode ==# ''
+      let mode = "S⋅BLOCK"
+    elseif mode =~# '\vi'
+      let mode = "INSERT"
+    elseif mode =~# '\v(R|Rv)'
+      let mode = "REPLACE"
+    else
+      let mode = "NORMAL"
+    endif
+    return mode
+endfunction
+
+" function! HighlightSearch(
+"  if &hls
+"    return 'H'
+"  else
+"    return ''
+"  endif
+"endfunction
+
+" ======= Window Heights ========================
+" We have to have a winheight bigger than we want to set winminheight. But if
+" we set winheight to be huge before winminheight, the winminheight set will fail.
+set winheight=5
+set winminheight=5
+set winheight=999
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " This enables iterm cursor changes from vim. In .tmux.conf you'll need:
