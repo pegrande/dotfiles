@@ -11,11 +11,6 @@ endif
 
 let mapleader = " " " set leader
 
-" ================== Powerline ==================
-set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/
-let g:Powerline_symbols = 'fancy'
-
-
 " ================== Vundle =====================
 filetype on
 filetype off
@@ -139,8 +134,9 @@ set backspace=indent,eol,start    " allow backspace in insert mode
 set laststatus=2                  " always show the status bar
 set ttimeoutlen=5
 
-" ============= Powerline =====================
-set rtp+= ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
+" ================== Powerline ==================
+set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/
+let g:Powerline_symbols = 'fancy'
 
 " function! HighlightSearch(
 "  if &hls
