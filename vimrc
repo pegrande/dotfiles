@@ -11,11 +11,15 @@ endif
 
 let mapleader = " " " set leader
 
+" ================== Powerline ==================
+set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/
+let g:Powerline_symbols = 'fancy'
+
+
 " ================== Vundle =====================
 filetype on
 filetype off
 set rtp+=~/.vim/bundle/vundle/
-set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
