@@ -15,6 +15,7 @@ let mapleader = " " " set leader
 filetype on
 filetype off
 set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
@@ -39,7 +40,7 @@ Bundle 'vim-scripts/bufkill.vim'
 
 " Smarts around killing buffers, will close the split if it's the last buffer in
 " it, and close vim if it's the last buffer/split. Use ,w
-Bundle 'nathanaelkane/vim-command-w'
+Bundle 'aaronjensen/vim-command-w'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vroom
@@ -134,61 +135,8 @@ set backspace=indent,eol,start    " allow backspace in insert mode
 set laststatus=2                  " always show the status bar
 set ttimeoutlen=5
 
-" ====== Statusline =============================
-function! InsertStatuslineColor(mode)
-  if a:mode == 'i'
-    hi statusline ctermfg=253 ctermbg=20
-  elseif a:mode == 'r'
-    hi statusline ctermfg=5 ctermbg=251
-  else
-    hi statusline ctermfg=112 ctermbg=22
-  end
-endfunction
-
-au InsertEnter * call InsertStatuslineColor(v:insertmode)
-au InsertLeave * hi statusline ctermfg=112 ctermbg=22
-
-" default the statusline to green when entering Vim
-hi statusline ctermfg=112 ctermbg=22
-
-" ======= Status Line Colors ===========================
-hi User0 ctermfg=1 ctermbg=154
-hi User1 ctermfg=113 ctermbg=22
-hi User2 ctermfg=15 ctermbg=236
-
-set statusline=
-set statusline+=%0*\ \%{GetMode()}                        " Mode
-set statusline+=%0*\ \[%n]\                               " Buffer Number
-set statusline+=%1*\ %<%F\                                " File+path
-set statusline+=%1*\ %m%r%w                               " Modified? Readonly?
-set statusline+=%=
-set statusline+=%2*\ %y\                                  " FileType
-set statusline+=%0*\ %l:%c\                               " Row:Column
-set statusline+=%0*\ %P\ \                                " %Scroll
-
-function! GetMode() " {{{
-    let mode = mode()
-    if mode ==# 'v'
-      let mode = "VISUAL"
-    elseif mode ==# 'V'
-      let mode = "V⋅LINE"
-    elseif mode ==# ''
-      let mode = "V⋅BLOCK"
-    elseif mode ==# 's'
-      let mode = "SELECT"
-    elseif mode ==# 'S'
-      let mode = "S⋅LINE"
-    elseif mode ==# ''
-      let mode = "S⋅BLOCK"
-    elseif mode =~# '\vi'
-      let mode = "INSERT"
-    elseif mode =~# '\v(R|Rv)'
-      let mode = "REPLACE"
-    else
-      let mode = "NORMAL"
-    endif
-    return mode
-endfunction
+" ============= Powerline =====================
+set rtp+= ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
 
 " function! HighlightSearch(
 "  if &hls
@@ -204,6 +152,16 @@ endfunction
 set winheight=5
 set winminheight=5
 set winheight=999
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Preview window size hack
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! ResizePreviewWindow()
+  if &previewwindow
+    set winheight=999
+  endif
+endfunction
+autocmd WinEnter * call ResizePreviewWindow()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " This enables iterm cursor changes from vim. In .tmux.conf you'll need:
