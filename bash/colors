@@ -25,3 +25,22 @@ COLOR_LIGHT_GREEN='\[\033[1;32m\]'
 COLOR_LIGHT_CYAN='\[\033[1;36m\]'
 COLOR_LIGHT_RED='\[\033[1;31m\]'
 COLOR_LIGHT_PURPLE='\[\033[1;35m\]'
+
+COLOR_SOLAR_YELLOW=$(tput setaf 136)
+COLOR_SOLAR_BASE03=$(tput setaf 234)
+COLOR_SOLAR_BASE02=$(tput setaf 235)
+COLOR_SOLAR_BASE01=$(tput setaf 240)
+COLOR_SOLAR_BASE00=$(tput setaf 241)
+COLOR_SOLAR_BASE0=$(tput setaf 244)
+COLOR_SOLAR_BASE1=$(tput setaf 245)
+COLOR_SOLAR_BASE2=$(tput setaf 254)
+COLOR_SOLAR_BASE3=$(tput setaf 230)
+COLOR_SOLAR_YELLOW=$(tput setaf 136)
+COLOR_SOLAR_ORANGE=$(tput setaf 166)
+COLOR_SOLAR_RED=$(tput setaf 160)
+COLOR_SOLAR_MAGENTA=$(tput setaf 125)
+COLOR_SOLAR_VIOLET=$(tput setaf 61)
+COLOR_SOLAR_BLUE=$(tput setaf 33)
+COLOR_SOLAR_CYAN=$(tput setaf 37)
+COLOR_SOLAR_GREEN=$(tput setaf 64)
+
