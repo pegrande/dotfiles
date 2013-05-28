@@ -13,6 +13,7 @@ function current_git_branch {
 
 
 alias psqlstart="sudo sysctl -w kern.sysv.shmall=65536;sudo sysctl -w kern.sysv.shmmax=61751296;pg_ctl -D /usr/local/var/postgres start"
+alias ls="ls -G"
 
 alias graph="git log --graph --decorate --all"
 alias grox="git rebase origin/\`current_git_branch\`"
@@ -39,12 +40,13 @@ alias rspeck="bundle exec rspec --format documentation"
 alias z='`[ -e .zeus.sock ] && echo zeus || echo SAD: Zeus is not running 1>&2`'
 alias zr='`[ -e .zeus.sock ] && echo zeus || echo rails`'
 alias zbe='`[ -e .zeus.sock ] && echo zeus || echo bundle exec`'
+alias zdb="zbe rake db:migrate db:test:prepare"
+alias zake="zbe rake"
+
+
 alias console="if [ -f script/console ] ; then script/console; else script/rails console ; fi"
 alias server="if [ -f script/server ] ; then script/server; else script/rails server ; fi"
 alias mongrel="if [ -f script/server ] ; then script/server mongrel; else script/rails server mongrel; fi"
-
-alias zdb="zbe rake db:migrate db:test:prepare"
-alias zake="zbe rake"
 
 alias load=". ~/.bash_profile"
 alias vim="mvim -v"
@@ -67,7 +69,7 @@ GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWUPSTREAM=verbose
-PS1="\n${COLOR_SOLAR_RED}[ ${COLOR_SOLAR_BLUE}\w${COLOR_SOLAR_GREEN}\$(__git_ps1 ' (%s)')${COLOR_SOLAR_RED} ]${COLOR_LIGHT_BLUE} --> ${COLOR_NONE} "
+PS1="\n${COLOR_RED}[ ${COLOR_BLUE}\w${COLOR_GREEN}\$(__git_ps1 ' (%s)')${COLOR_RED} ]${COLOR_BLUE} --> ${COLOR_NONE} "
 
 function name_tab() {
   echo -ne "\033]0;$1\007"
