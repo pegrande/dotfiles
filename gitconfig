@@ -1,0 +1,26 @@
+[user]
+	name = Jeff Forde
+	email = jeff@substantial.com
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+[format]
+  pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
+[core]
+  excludesfile = ~/.gitignore_global
+[rerere]
+	enabled = true
+[alias]
+	st = status
+[merge]
+  summary = false
+  tool = p4merge
+  conflictstyle = diff3
+[mergetool]
+  keepBackup = false
+  keepTemporaries = false
+  prompt = false
+[mergetool "p4merge"]
+  keepTemporaries = false
+  keepBackup = false
