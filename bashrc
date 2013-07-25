@@ -30,7 +30,7 @@ alias mdev="script/mergeq develop"
 alias mc="script/mergeq --continue"
 alias pf="script/push"
 
-alias bi="bundle install --standalone --binstubs bundle/bin"
+alias bi="bundle install --binstubs bundle/bin"
 alias bakedb="bundle exec rake db:migrate db:test:prepare"
 alias be="bundle exec"
 alias beg="bundle exec guard"
