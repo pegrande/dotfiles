@@ -1,2 +1,4 @@
 .ruby-version
 .noexec.yaml
+.DS_Store
+.config/

@@ -107,7 +107,7 @@ filetype plugin indent on
 "================== Colors ======================
 Bundle 'ap/vim-css-color'
 Bundle 'molokai'
-" colorscheme molokai
+colorscheme molokai
 set t_vb=
 set t_Co=256
 
@@ -115,9 +115,7 @@ Bundle 'altercation/vim-colors-solarized'
 
 syntax enable
 set background=dark
-colorscheme solarized
-
-
+" colorscheme solarized
 
 " ============== Backups and swap ===============
 set nobackup
