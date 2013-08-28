@@ -69,7 +69,7 @@ GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWUPSTREAM=verbose
-PS1="\n${COLOR_RED}[ ${COLOR_BLUE}\w${COLOR_GREEN}\$(__git_ps1 ' (%s)')${COLOR_RED} ]${COLOR_BLUE} --> ${COLOR_NONE} "
+PS1="\n${COLOR_RED}[ ${COLOR_BLUE}\w${COLOR_YELLOW}\$(__git_ps1 ' (%s)')${COLOR_RED} ]${COLOR_BLUE} --> ${COLOR_NONE} "
 
 function name_tab() {
   echo -ne "\033]0;$1\007"
