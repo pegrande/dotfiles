@@ -24,13 +24,23 @@ alias status="git status"
 alias branch="git branch"
 alias remote="git branch -r"
 alias master="git checkout master"
+alias push="git push origin head"
 
 alias mi="script/mergeq integration"
 alias mdev="script/mergeq develop"
 alias mc="script/mergeq --continue"
 alias pf="script/push"
 
-alias bi="bundle install --binstubs bundle/bin"
+__git_complete qm _git_checkout
+function qm() {
+  rm .merging
+  rm .merge
+  git reset --hard
+  git checkout "$1"
+}
+
+
+alias bi="bundle install"
 alias bakedb="bundle exec rake db:migrate db:test:prepare"
 alias be="bundle exec"
 alias beg="bundle exec guard"
