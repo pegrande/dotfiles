@@ -29,3 +29,6 @@ do
   echo -n "Link "
   ln -v -s "$F/$P" "$HOME/.$P"
 done
+
+cd ~/.vim/bundle/ctrlp-cmatcher
+./install_linux.sh

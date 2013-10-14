@@ -25,6 +25,10 @@ Bundle 'kien/ctrlp.vim'
 map <leader>f :let g:ctrlp_default_input = 0<cr>:CtrlP<cr>
 map <leader><leader>f :let g:ctrlp_default_input = 0<cr>:CtrlPClearCache<cr>:CtrlP<cr>
 
+Bundle 'JazzCore/ctrlp-cmatcher'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard']
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+
 " ================== ACK! ======================
 Bundle 'mileszs/ack.vim'
 map <leader>a :Ack!<space>
