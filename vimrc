@@ -20,6 +20,12 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-rails'
 
+" ============== Hardmode ======================
+Bundle 'wikitopian/hardmode'
+
+nnoremap <leader>h <esc>:call ToggleHardMode()<cr>
+let g:HardMode_hardmodeMsg = "What is this crazy thing?"
+
 " ================= CTRL-P =====================
 Bundle 'kien/ctrlp.vim'
 map <leader>f :let g:ctrlp_default_input = 0<cr>:CtrlP<cr>
@@ -61,6 +67,7 @@ let g:vroom_write_all = 1
 let g:vroom_use_bundle_exec = 0
 let g:vroom_spec_command = '`([ -e .zeus.sock ] && echo zeus) || echo bundle exec` rspec '
 let g:vroom_cucumber_path = '`([ -e .zeus.sock ] && echo zeus) || echo bundle exec` cucumber -r features '
+let g:vroom_use_colors = 1
 map <leader>t :VroomRunTestFile<cr>
 map <leader>T :VroomRunNearestTest<cr>
 
