@@ -128,6 +128,9 @@ syntax enable
 set background=dark
 " colorscheme solarized
 
+hi Search ctermbg=Green
+hi Search ctermfg=Black
+
 " ============== Backups and swap ===============
 set nobackup
 set nowritebackup
