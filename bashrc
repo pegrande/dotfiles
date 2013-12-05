@@ -6,11 +6,27 @@ export PATH=$HOME/.bin:/usr/local/bin:/usr/local/bin/psql:$PATH
 export PATH=$PATH\:/usr/local/sbin
 export PATH=$PATH\:~/SDKs/android-sdk-macosx/tools:~/SDKs/android-sdk-macosx/platform-tools
 export ANDROID_HOME="/Users/jeff/SDKs/android-sdk-macosx"
+export EDITOR="vim"
 
 function current_git_branch {
   git branch | grep ^* | sed s/*\ //
 }
 
+function current {
+  if [ $1 ] && [ -z $2 ]
+  then
+    export C_BRANCH=$1
+    echo "Current Branch set to $C_BRANCH"
+    return 0
+  else
+    echo "Current Branch set to $C_BRANCH"
+    return 1
+  fi
+}
+
+function coc {
+  git checkout $C_BRANCH
+}
 
 alias psqlstart="sudo sysctl -w kern.sysv.shmall=65536;sudo sysctl -w kern.sysv.shmmax=61751296;pg_ctl -D /usr/local/var/postgres start"
 alias ls="ls -G"
@@ -26,10 +42,12 @@ alias remote="git branch -r"
 alias master="git checkout master"
 alias push="git push origin head"
 
+alias dev="git checkout develop"
 alias mi="script/mergeq integration"
 alias mdev="script/mergeq develop"
 alias mc="script/mergeq --continue"
 alias pf="script/push"
+alias pmi="git push origin head; script/mergeq integration"
 
 __git_complete qm _git_checkout
 function qm() {
@@ -38,7 +56,6 @@ function qm() {
   git reset --hard
   git checkout "$1"
 }
-
 
 alias bi="bundle install"
 alias bakedb="bundle exec rake db:migrate db:test:prepare"
