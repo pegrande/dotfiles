@@ -277,6 +277,10 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" =============== Normal Mode Insert Space =========
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
+
 " =============== Save with W ===================
 command! W write
 
