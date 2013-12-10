@@ -24,3 +24,5 @@
 [mergetool "p4merge"]
   keepTemporaries = false
   keepBackup = false
+[push]
+	default = simple

@@ -113,7 +113,6 @@ autocmd BufEnter    *.git/COMMIT_EDITMSG  exe BufEnterCommit()
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
 syntax on " turn on syntax highlighting
-filetype plugin indent on
 
 "================== Colors ======================
 Bundle 'ap/vim-css-color'
@@ -123,6 +122,30 @@ set t_vb=
 set t_Co=256
 
 Bundle 'altercation/vim-colors-solarized'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Powerline
+"
+" The ultimate vim statusline utility
+"
+" You'll need a powerline patched font.
+" You should probably use inconsolata-g (included in fonts directory)
+"
+" If not, you can patch your own.
+" See: https://github.com/Lokaltog/vim-powerline/tree/develop/fontpatcher
+" You'll probably need this too:
+" https://github.com/jenius/Fontforge-Installer
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'Lokaltog/vim-powerline'
+
+let g:Powerline_symbols = 'fancy'
+let g:Powerline_stl_path_style = 'relative'
+call Pl#Theme#RemoveSegment('fugitive:branch')
+call Pl#Theme#RemoveSegment('fileformat')
+call Pl#Theme#RemoveSegment('fileencoding')
+call Pl#Theme#RemoveSegment('scrollpercent')
+
+filetype plugin indent on
 
 syntax enable
 set background=dark
@@ -153,10 +176,6 @@ set noerrorbells
 set backspace=indent,eol,start    " allow backspace in insert mode
 set laststatus=2                  " always show the status bar
 set ttimeoutlen=5
-
-" ================== Powerline ==================
-set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/
-let g:Powerline_symbols = 'fancy'
 
 " function! HighlightSearch(
 "  if &hls
