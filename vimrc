@@ -18,7 +18,6 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-rails'
 
 " ============== Hardmode ======================
 Bundle 'wikitopian/hardmode'
@@ -35,10 +34,17 @@ Bundle 'JazzCore/ctrlp-cmatcher'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard']
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
-" ================== ACK! ======================
+" ================== ACK!/AG! ======================
 Bundle 'mileszs/ack.vim'
-map <leader>a :Ack!<space>
-map <leader>A :Ack! <C-R><C-W><CR>
+Bundle 'rking/ag.vim'
+
+map <leader>a :Ag!<space>
+map <leader>A :Ag! <C-R><C-W><CR>
+
+" Use ag for search, it's much faster than ack.
+" See https://github.com/ggreer/the_silver_searcher
+" on mac: brew install the_silver_searcher
+let g:agprg = 'ag --nogroup --nocolor --column --smart-case'
 
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-rails'
@@ -298,9 +304,6 @@ map <C-l> <C-w>l
 
 " =============== Normal Mode Insert Space =========
 nmap <S-Enter> O<Esc>
-
-" =============== Save with W ===================
-command! W write
 
 " =============== Kill Buffer ===================
 nmap <leader>w :CommandW<cr>
