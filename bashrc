@@ -26,7 +26,10 @@ function coc {
   git checkout $C_BRANCH
 }
 
+
 alias psqlstart="sudo sysctl -w kern.sysv.shmall=65536;sudo sysctl -w kern.sysv.shmmax=61751296;pg_ctl -D /usr/local/var/postgres start"
+alias mysqlstart="mysql.server start"
+alias redisstart="redis-server /usr/local/etc/redis.conf"
 alias ls="ls -G"
 
 alias graph="git log --graph --decorate --all"
