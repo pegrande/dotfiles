@@ -26,7 +26,6 @@ function coc {
   git checkout $C_BRANCH
 }
 
-
 alias psqlstart="sudo sysctl -w kern.sysv.shmall=65536;sudo sysctl -w kern.sysv.shmmax=61751296;pg_ctl -D /usr/local/var/postgres start"
 alias mysqlstart="mysql.server start"
 alias redisstart="redis-server /usr/local/etc/redis.conf"
@@ -34,29 +33,15 @@ alias ls="ls -G"
 
 alias graph="git log --graph --decorate --all"
 alias grox="git rebase origin/\`current_git_branch\`"
-alias log="git log"
+alias grh="git reset --hard"
 alias uncommit="git reset --soft HEAD^"
 alias update="git remote update --prune"
-alias status="git status"
-alias branch="git branch"
-alias remote="git branch -r"
-alias master="git checkout master"
+alias gs="git status"
+alias gb="git branch"
+alias gbr="git branch -r"
+alias com="git checkout master"
 alias push="git push origin head"
 
-alias dev="git checkout develop"
-alias mi="script/mergeq integration"
-alias mdev="script/mergeq develop"
-alias mc="script/mergeq --continue"
-alias pf="script/push"
-alias pmi="git push origin head; script/mergeq integration"
-
-__git_complete qm _git_checkout
-function qm() {
-  rm .merging
-  rm .merge
-  git reset --hard
-  git checkout "$1"
-}
 
 alias bi="bundle install"
 alias bakedb="bundle exec rake db:migrate db:test:prepare"
@@ -64,13 +49,6 @@ alias be="bundle exec"
 alias beg="bundle exec guard"
 alias speck="bundle exec rake spec verbose=true guard:jasmine"
 alias rspeck="bundle exec rspec --format documentation"
-
-alias z='`[ -e .zeus.sock ] && echo zeus || echo SAD: Zeus is not running 1>&2`'
-alias zr='`[ -e .zeus.sock ] && echo zeus || echo rails`'
-alias zbe='`[ -e .zeus.sock ] && echo zeus || echo bundle exec`'
-alias zdb="zbe rake db:migrate db:test:prepare"
-alias zake="zbe rake"
-
 
 alias console="if [ -f script/console ] ; then script/console; else script/rails console ; fi"
 alias server="if [ -f script/server ] ; then script/server; else script/rails server ; fi"
@@ -110,3 +88,11 @@ function name_tab() {
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+__git_complete qm _git_checkout
+function qm() {
+  rm .merging
+  rm .merge
+  git reset --hard
+  git checkout "$1"
+}
