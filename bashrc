@@ -1,5 +1,9 @@
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
+#export CC=/usr/local/bin/gcc-4.9
+#export CPP=/usr/local/bin/cpp-4.9
+#export CXX=/usr/local/bin/g++-4.9
+
 export PATH=$HOME/.bin:/usr/local/bin:/usr/local/bin/psql:$PATH
 export PATH=$PATH\:/usr/local/sbin
 export PATH=$PATH\:~/SDKs/android-sdk-macosx/tools:~/SDKs/android-sdk-macosx/platform-tools
@@ -26,45 +30,12 @@ function coc {
   git checkout $C_BRANCH
 }
 
-alias psqlstart="sudo sysctl -w kern.sysv.shmall=65536;sudo sysctl -w kern.sysv.shmmax=61751296;pg_ctl -D /usr/local/var/postgres start"
-alias mysqlstart="mysql.server start"
-alias redisstart="redis-server /usr/local/etc/redis.conf"
-alias ls="ls -G"
-
-alias graph="git log --graph --decorate --all"
-alias grox="git rebase origin/\`current_git_branch\`"
-alias grh="git reset --hard"
-alias uncommit="git reset --soft HEAD^"
-alias update="git remote update --prune"
-alias gs="git status"
-alias gb="git branch"
-alias gbr="git branch -r"
-alias com="git checkout master"
-alias push="git push origin head"
-
-
-alias bi="bundle install"
-alias bakedb="bundle exec rake db:migrate db:test:prepare"
-alias be="bundle exec"
-alias beg="bundle exec guard"
-alias speck="bundle exec rake spec verbose=true guard:jasmine"
-alias rspeck="bundle exec rspec --format documentation"
-
-alias console="if [ -f script/console ] ; then script/console; else script/rails console ; fi"
-alias server="if [ -f script/server ] ; then script/server; else script/rails server ; fi"
-alias mongrel="if [ -f script/server ] ; then script/server mongrel; else script/rails server mongrel; fi"
-
-alias load=". ~/.bash_profile"
-alias vim="mvim -v"
-alias vimcolors="perl ~/.vim/.vim-256color.pl"
-
-alias tmuxg="tmux new-session -t 0"
-
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
 
 source ~/.bash/colors
+source ~/.bash/aliases
 
 # git prompt goodnes
 GIT_PS1_SHOWDIRTYSTATE=true
@@ -79,7 +50,6 @@ function name_tab() {
 
 #PS1="\n\[\e[30;1m\]\[\016\]l\[\017\](\[\e[34;1m\]\u@\h\[\e[30;1m\])-(\[\e[34;1m\]\j\[\e[30;1m\])-(\[\e[34;1m\]\@ \d\[\e[30;1m\])->\[\e[30;1m\]\n\[\016\]m\[\017\]-(\[\[\e[32;1m\]\w\[\e[30;1m\])-(\[\e[32;1m\]\$(/bin/ls -1 | /usr/bin/wc -l | /bin/sed 's: ::g') files, \$(/bin/ls -lah | /bin/grep -m 1 total | /bin/sed 's/total //')b\[\e[30;1m\])--> \[\e[0m\]"
 
-### source ~/.bash/aliases
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion

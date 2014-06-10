@@ -14,7 +14,7 @@ let mapleader = " " " set leader
 " ================== Vundle =====================
 filetype on
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
@@ -156,6 +156,9 @@ set background=dark
 
 hi Search ctermbg=Green
 hi Search ctermfg=Black
+
+" ============== :E View =======================
+map <leader>k :E<cr>
 
 " ============== Backups and swap ===============
 set nobackup
