@@ -63,13 +63,11 @@ Bundle 'aaronjensen/vim-command-w'
 "
 " Using my fork until: https://github.com/skalnik/vim-vroom/pull/33
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'aaronjensen/vim-vroom'
+Bundle 'skalnik/vim-vroom'
 
 let g:vroom_map_keys = 0
 let g:vroom_write_all = 1
 let g:vroom_use_bundle_exec = 0
-let g:vroom_spec_command = '`([ -e .zeus.sock ] && echo zeus) || echo bundle exec` rspec '
-let g:vroom_cucumber_path = '`([ -e .zeus.sock ] && echo zeus) || echo bundle exec` cucumber -r features '
 let g:vroom_use_colors = 1
 map <leader>t :VroomRunTestFile<cr>
 map <leader>T :VroomRunNearestTest<cr>

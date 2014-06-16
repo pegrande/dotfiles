@@ -9,6 +9,7 @@ export PATH=$PATH\:/usr/local/sbin
 export PATH=$PATH\:~/SDKs/android-sdk-macosx/tools:~/SDKs/android-sdk-macosx/platform-tools
 export ANDROID_HOME="/Users/jeff/SDKs/android-sdk-macosx"
 export EDITOR="vim"
+export DISABLE_SPRING=1
 
 function current_git_branch {
   git branch | grep ^* | sed s/*\ //
@@ -47,7 +48,7 @@ GIT_PS1_SHOWUPSTREAM=verbose
 #PS1="\n${COLOR_RED}[ ${COLOR_BLUE}\w${COLOR_YELLOW}\$(__git_ps1 ' (%s)')${COLOR_RED} ]${COLOR_BLUE} --> ${COLOR_NONE} "
 
 # Modified example
-PS1="\n${COLOR_GRAY}l(${COLOR_BLUE}\w${COLOR_GRAY})->\n\[\016\]m\[\017\]-(\[\e[32;1m\]\$(/bin/ls -1 | /usr/bin/wc -l | /usr/bin/sed 's: ::g') files, \$(/bin/ls -lah | /usr/bin/grep -m 1 total | /usr/bin/sed 's/total //')b${COLOR_GRAY})-(${COLOR_LIGHT_GREEN}\$(__git_ps1 '%s' )${COLOR_GRAY})--> \[\e[0m\]"
+PS1="\n${COLOR_GRAY}\[\016\]l\[\017\]-(${COLOR_BLUE}\w${COLOR_GRAY})->\n\[\016\]m\[\017\]-(\[\e[32;1m\]\$(/bin/ls -1 | /usr/bin/wc -l | /usr/bin/sed 's: ::g') files, \$(/bin/ls -lah | /usr/bin/grep -m 1 total | /usr/bin/sed 's/total //')b${COLOR_GRAY})${COLOR_LIGHT_GREEN}\$(__git_ps1 ' [ %s ]' )${COLOR_GRAY} --> \[\e[0m\]"
 
 # Example Prompt
 #PS1="\n\[\e[30;1m\]\[\016\]l\[\017\](\[\e[34;1m\]\u@\h\[\e[30;1m\])-(\[\e[34;1m\]\j\[\e[30;1m\])-(\[\e[34;1m\]\@ \d\[\e[30;1m\])->\[\e[30;1m\]\n\[\016\]m\[\017\]-(\[\[\e[32;1m\]\w\[\e[30;1m\])-(\[\e[32;1m\]\$(/bin/ls -1 | /usr/bin/wc -l | /usr/bin/sed 's: ::g') files, \$(/bin/ls -lah | /usr/bin/grep -m 1 total | /usr/bin/sed 's/total //')b\[\e[30;1m\])--> \[\e[0m\]"
