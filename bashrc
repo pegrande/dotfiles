@@ -9,7 +9,6 @@ export PATH=$PATH\:/usr/local/sbin
 export PATH=$PATH\:~/SDKs/android-sdk-macosx/tools:~/SDKs/android-sdk-macosx/platform-tools
 export ANDROID_HOME="/Users/jeff/SDKs/android-sdk-macosx"
 export EDITOR="vim"
-export DISABLE_SPRING=1
 
 function current_git_branch {
   git branch | grep ^* | sed s/*\ //

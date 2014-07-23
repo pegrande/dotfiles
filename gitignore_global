@@ -2,3 +2,4 @@
 .noexec.yaml
 .DS_Store
 .config/
+dump.rdb
