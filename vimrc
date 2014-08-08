@@ -46,6 +46,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-eunuch'
 Bundle 'nono/vim-handlebars'
+Bundle 'slim-template/vim-slim'
 
 " Kills a buffer without closing a split, use ,w . Used in conjunction
 " with command-w, below...
