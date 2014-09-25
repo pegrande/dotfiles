@@ -268,12 +268,13 @@ set wildmode=longest,list
 set wildmenu
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem,public/javascripts/compiled " disable output and VCS files
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz       " disable archive files
-set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*,bundle,jhw-cache  " ignore bundler and sass cache
-set wildignore+=*/public/system/*,public/javascripts/compiled  " ignore assets
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/vendor/assets/*,*/.bundle/*,*/.sass-cache/*,bundle,jhw-cache  " ignore bundler and sass cache
+set wildignore+=*/public/system/*,public/javascripts/compiled,*/public/media/*  " ignore assets
 set wildignore+=*.swp,tmp,*~,._*       " ignore temp and backup files
 set wildignore+=*.orig,*.jpg,*.png,*.gif
 set wildignore+=log,solr
 set wildignore+=bundler_stubs,build,error_pages
+set wildignore+=*/node_modules/*
 
 " ================ Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.
