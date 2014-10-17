@@ -27,8 +27,9 @@ let g:HardMode_hardmodeMsg = "What is this crazy thing?"
 
 " ================= CTRL-P =====================
 Bundle 'kien/ctrlp.vim'
-map <leader>f :let g:ctrlp_default_input = 0<cr>:CtrlP<cr>
-map <leader><leader>f :let g:ctrlp_default_input = 0<cr>:CtrlPClearCache<cr>:CtrlP<cr>
+" Uncomment to map ctrlp
+" map <leader>f :let g:ctrlp_default_input = 0<cr>:CtrlP<cr>
+" map <leader><leader>f :let g:ctrlp_default_input = 0<cr>:CtrlPClearCache<cr>:CtrlP<cr>
 
 " ================== ACK!/AG! ======================
 Bundle 'mileszs/ack.vim'
@@ -295,13 +296,15 @@ imap <left> <nop>
 imap <right> <nop>
 
 " =============== Easy Splitting ================
-map <leader>s :split<cr>
-map <leader>v :vsplit<cr>
+" Uncomment to map splitting
+" map <leader>s :split<cr>
+" map <leader>v :vsplit<cr>
 
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+" Uncomment to map window switching
+" map <C-h> <C-w>h
+" map <C-j> <C-w>j
+" map <C-k> <C-w>k
+" map <C-l> <C-w>l
 
 " =============== Normal Mode Insert Space =========
 nmap <S-Enter> O<Esc>
