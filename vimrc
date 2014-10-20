@@ -263,6 +263,7 @@ autocmd BufNewFile,BufRead *.json set ft=javascript " treat JSON files like Java
 autocmd BufNewFile,BufRead *.hamlc set ft=haml
 autocmd VimResized * wincmd = " resize splits when window size changes
 autocmd BufWritePre * :%s/\s\+$//e " remove trailing whitespace on save
+autocmd FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
 
 " ================ Completion =======================
 set wildmode=longest,list
