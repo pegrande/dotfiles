@@ -28,8 +28,8 @@ let g:HardMode_hardmodeMsg = "What is this crazy thing?"
 " ================= CTRL-P =====================
 Bundle 'kien/ctrlp.vim'
 " Uncomment to map ctrlp
-" map <leader>f :let g:ctrlp_default_input = 0<cr>:CtrlP<cr>
-" map <leader><leader>f :let g:ctrlp_default_input = 0<cr>:CtrlPClearCache<cr>:CtrlP<cr>
+map <leader>f :let g:ctrlp_default_input = 0<cr>:CtrlP<cr>
+map <leader><leader>f :let g:ctrlp_default_input = 0<cr>:CtrlPClearCache<cr>:CtrlP<cr>
 
 " ================== ACK!/AG! ======================
 Bundle 'mileszs/ack.vim'
