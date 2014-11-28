@@ -65,9 +65,3 @@ function name_tab() {
 export PATH="/usr/local/heroku/bin:$PATH"
 
 __git_complete qm _git_checkout
-function qm() {
-  rm .merging
-  rm .merge
-  git reset --hard
-  git checkout "$1"
-}
