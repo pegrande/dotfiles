@@ -120,7 +120,7 @@ syntax on " turn on syntax highlighting
 
 "================== Colors ======================
 Bundle 'ap/vim-css-color'
-Bundle 'molokai'
+Bundle 'tomasr/molokai'
 colorscheme molokai
 set t_vb=
 set t_Co=256
