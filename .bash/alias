@@ -13,6 +13,7 @@ alias gb="git branch"
 alias gbr="git branch -r"
 alias com="git checkout master"
 alias push="git push origin head"
+alias gitx="open -a GitX ."
 
 
 alias bi="bundle install"
@@ -27,7 +28,6 @@ alias server="if [ -f script/server ] ; then script/server; else script/rails se
 alias mongrel="if [ -f script/server ] ; then script/server mongrel; else script/rails server mongrel; fi"
 
 alias load=". ~/.bash_profile"
-alias vim="mvim -v"
 alias vimcolors="perl ~/.vim/.vim-256color.pl"
 
 alias tmuxg="tmux new-session -t 0"
