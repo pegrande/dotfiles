@@ -66,8 +66,11 @@ Bundle 'aaronjensen/vim-command-w'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'benmills/vimux'
 
-let g:vroom_clear_screen = 0
-let g:vroom_use_vimux = 1
+let g:VimuxOrientation = 'h'
+let g:VimuxPromptString = "Cmd: "
+let g:VimuxHeight = "30"
+map <leader>c :VimuxPromptCommand<cr>
+map <leader>C :RunLastVimTmuxCommand<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vroom
@@ -84,6 +87,8 @@ let g:vroom_map_keys = 0
 let g:vroom_write_all = 1
 let g:vroom_use_bundle_exec = 0
 let g:vroom_use_colors = 1
+let g:vroom_clear_screen = 0
+let g:vroom_use_vimux = 1
 map <leader>t :VroomRunTestFile<cr>
 map <leader>T :VroomRunNearestTest<cr>
 
