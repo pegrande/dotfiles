@@ -60,6 +60,16 @@ Bundle 'vim-scripts/bufkill.vim'
 Bundle 'aaronjensen/vim-command-w'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vimux
+"
+" Setup vimux so vroom dispatches in the side Terminal panel
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'benmills/vimux'
+
+let g:vroom_clear_screen = 0
+let g:vroom_use_vimux = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vroom
 "
 " Run specs or cucumber features with ,t run only the test under the cursor
@@ -264,8 +274,20 @@ set scrolloff=8           "Start scrolling when scrolloff lines away from margin
 autocmd BufNewFile,BufRead *.json set ft=javascript " treat JSON files like JavaScript
 autocmd BufNewFile,BufRead *.hamlc set ft=haml
 autocmd VimResized * wincmd = " resize splits when window size changes
-autocmd BufWritePre * :%s/\s\+$//e " remove trailing whitespace on save
 autocmd FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
+augroup Miscellaneous
+  au!
+  " Remember last location in file
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal g'\"" | endif
+
+  " Remove trailing whitespace
+  au FileType coffee,eruby,haml,javascript,php,ruby,sass,scss,sh,xml
+    \ au BufWritePre <buffer>
+      \ let pos = getpos('.')
+      \ | execute '%s/\s\+$//e'
+      \ | call setpos('.', pos)
+augroup END
 
 " ================ Completion =======================
 set wildmode=longest,list
