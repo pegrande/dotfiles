@@ -40,3 +40,6 @@ alias tmuxg="tmux new-session -t 0"
 ### }
 
 ### alias n='name_tab'
+
+alias mi="script/mergeq integration"
+alias mic="script/mergeq integration --continue"
