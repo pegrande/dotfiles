@@ -30,6 +30,26 @@ Bundle 'kien/ctrlp.vim'
 " Uncomment to map ctrlp
 map <leader>f :let g:ctrlp_default_input = 0<cr>:CtrlP<cr>
 map <leader><leader>f :let g:ctrlp_default_input = 0<cr>:CtrlPClearCache<cr>:CtrlP<cr>
+Plugin 'JazzCore/ctrlp-cmatcher'
+
+if executable('ag')
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'cd %s && ag --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  " no it isn't
+  " let g:ctrlp_use_caching = 0
+else
+  " Fall back to using git ls-files if Ag is not available
+  let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+endif
+
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+
+" Don't manage working directory
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_follow_symlinks = 2
 
 " ================== ACK!/AG! ======================
 Bundle 'mileszs/ack.vim'
