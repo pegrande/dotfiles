@@ -89,6 +89,7 @@ Bundle 'benmills/vimux'
 let g:VimuxOrientation = 'h'
 let g:VimuxPromptString = "Cmd: "
 let g:VimuxHeight = "30"
+map <leader>q :VimuxPromptCommand 'exit'<cr><cr>
 map <leader>c :VimuxPromptCommand<cr>
 map <leader>C :RunLastVimTmuxCommand<cr>
 
@@ -194,6 +195,7 @@ set background=dark
 
 hi Search ctermbg=Green
 hi Search ctermfg=Black
+hi Search ctermbg=5
 
 " ============== :E View =======================
 map <leader>k :E<cr>
@@ -220,6 +222,8 @@ set noerrorbells
 set backspace=indent,eol,start    " allow backspace in insert mode
 set laststatus=2                  " always show the status bar
 set ttimeoutlen=5
+hi ColorColumn ctermbg=236
+hi ColorColumn ctermfg=58
 
 " function! HighlightSearch(
 "  if &hls
