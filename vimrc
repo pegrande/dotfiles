@@ -193,8 +193,6 @@ syntax enable
 set background=dark
 " colorscheme solarized
 
-hi Search ctermbg=Green
-hi Search ctermfg=Black
 hi Search ctermbg=5
 
 " ============== :E View =======================
@@ -222,6 +220,7 @@ set noerrorbells
 set backspace=indent,eol,start    " allow backspace in insert mode
 set laststatus=2                  " always show the status bar
 set ttimeoutlen=5
+set cc=90
 hi ColorColumn ctermbg=236
 hi ColorColumn ctermfg=58
 
