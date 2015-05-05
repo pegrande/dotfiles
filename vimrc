@@ -51,6 +51,10 @@ let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_follow_symlinks = 2
 
+" Only search open buffers
+map <leader>u :let g:ctrlp_default_input = 0<cr>:CtrlPBuffer<cr>
+map <leader>U :let g:ctrlp_default_input = 0<cr>:CtrlPLine<cr>
+
 " ================== ACK!/AG! ======================
 Bundle 'mileszs/ack.vim'
 Bundle 'rking/ag.vim'
@@ -78,6 +82,15 @@ Bundle 'vim-scripts/bufkill.vim'
 " Smarts around killing buffers, will close the split if it's the last buffer in
 " it, and close vim if it's the last buffer/split. Use ,w
 Bundle 'aaronjensen/vim-command-w'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" dash.vim
+"
+" Look up words in dash
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plugin 'rizzatti/dash.vim'
+nmap <silent> <leader>g <Plug>DashGlobalSearch
+nmap <silent> <leader><leader>g <Plug>DashSearch
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vimux

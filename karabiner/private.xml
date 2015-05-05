@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<root>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_FirefoxAurora</name>
+    <url>file:///Applications/FirefoxAurora.app</url>
+  </vkopenurldef>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_GoogleChrome</name>
+    <url>file:///Applications/Google%20Chrome.app</url>
+  </vkopenurldef>
+  <!-- <vkopenurldef> -->
+  <!--   <name>KeyCode::VK_OPEN_URL_APP_GoogleChrome</name> -->
+  <!--   <url type="shell"> -->
+  <!--     <![CDATA[ osascript $HOME/.bin/chrome.scpt ]]> -->
+  <!--   </url> -->
+  <!-- </vkopenurldef> -->
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Firefox</name>
+    <url>file:///Applications/Firefox.app</url>
+  </vkopenurldef>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_iTerm</name>
+    <url>file:///Applications/iTerm.app</url>
+  </vkopenurldef>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Skype</name>
+    <url>file:///Applications/Skype.app</url>
+  </vkopenurldef>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Flowdock</name>
+    <url>file:///Applications/Flowdock.app</url>
+  </vkopenurldef>
+  <item>
+    <name>Quick App Switching</name>
+    <item>
+      <name>Switches apps after pressing ;</name>
+      <appendix>;c - Google Chrome</appendix>
+      <appendix>;f - Firefox</appendix>
+      <appendix>;i - iTerm</appendix>
+      <appendix>;s - Skype</appendix>
+      <appendix>;l - Flowdock</appendix>
+      <identifier vk_config="true">notsave.quick_app_switch</identifier>
+      <autogen>__ShowStatusMessage__ Quick App Switch</autogen>
+      <autogen>__KeyToKey__ KeyCode::SEMICOLON, KeyCode::SEMICOLON, KeyCode::VK_CONFIG_FORCE_OFF_notsave_quick_app_switch, Option::NOREPEAT</autogen>
+      <autogen>__KeyToKey__ KeyCode::C, KeyCode::VK_OPEN_URL_APP_GoogleChrome, KeyCode::VK_CONFIG_FORCE_OFF_notsave_quick_app_switch, Option::NOREPEAT</autogen>
+      <autogen>__KeyToKey__ KeyCode::F, KeyCode::VK_OPEN_URL_APP_Firefox, KeyCode::VK_CONFIG_FORCE_OFF_notsave_quick_app_switch, Option::NOREPEAT</autogen>
+      <autogen>__KeyToKey__ KeyCode::I, KeyCode::VK_OPEN_URL_APP_iTerm, KeyCode::VK_CONFIG_FORCE_OFF_notsave_quick_app_switch, Option::NOREPEAT</autogen>
+      <autogen>__KeyToKey__ KeyCode::S, KeyCode::VK_OPEN_URL_APP_Skype, KeyCode::VK_CONFIG_FORCE_OFF_notsave_quick_app_switch, Option::NOREPEAT</autogen>
+      <autogen>__KeyToKey__ KeyCode::L, KeyCode::VK_OPEN_URL_APP_Flowdock, KeyCode::VK_CONFIG_FORCE_OFF_notsave_quick_app_switch, Option::NOREPEAT</autogen>
+      <include path="passthru.xml">
+        <replacementdef>
+          <replacementname>AFTER_PASSTHRU</replacementname>
+          <replacementvalue>Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::SEMICOLON, KeyCode::VK_CONFIG_FORCE_OFF_notsave_quick_app_switch</replacementvalue>
+        </replacementdef>
+      </include>
+    </item>
+    <item>
+      <name>Activate Quick App Switching with semicolon</name>
+      <identifier>quick_app_switch.semicolon</identifier>
+      <block>
+        <config_not>notsave.quick_app_switch</config_not>
+        <autogen>
+          __KeyToKey__
+          KeyCode::SEMICOLON, ModifierFlag::NONE,
+          KeyCode::VK_LOCK_ALL_FORCE_OFF,
+          KeyCode::VK_CONFIG_FORCE_ON_notsave_quick_app_switch,
+          Option::NOREPEAT,
+        </autogen>
+      </block>
+    </item>
+  </item>
+</root>

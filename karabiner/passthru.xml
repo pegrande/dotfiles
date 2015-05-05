@@ -1,0 +1,79 @@
+<root>
+  <!-- modifiers -->
+  <autogen>__KeyToKey__ KeyCode::CAPSLOCK, KeyCode::CAPSLOCK, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::COMMAND_L, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::COMMAND_R, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::CONTROL_L, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::CONTROL_R, KeyCode::CONTROL_R, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::FN, KeyCode::FN, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::OPTION_L, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::OPTION_R, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::SHIFT_L, KeyCode::SHIFT_L, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::SHIFT_R, KeyCode::SHIFT_R, {{ AFTER_PASSTHRU }}</autogen>
+
+  <!-- alphabet -->
+  <autogen>__KeyToKey__ KeyCode::A, KeyCode::A, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::B, KeyCode::B, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::C, KeyCode::C, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::D, KeyCode::D, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::E, KeyCode::E, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::F, KeyCode::F, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::G, KeyCode::G, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::H, KeyCode::H, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::I, KeyCode::I, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::J, KeyCode::J, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::K, KeyCode::K, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::L, KeyCode::L, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::M, KeyCode::M, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::N, KeyCode::N, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::O, KeyCode::O, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::P, KeyCode::P, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::Q, KeyCode::Q, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::R, KeyCode::R, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::S, KeyCode::S, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::T, KeyCode::T, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::U, KeyCode::U, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::V, KeyCode::V, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::W, KeyCode::W, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::X, KeyCode::X, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::Y, KeyCode::Y, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::Z, KeyCode::Z, {{ AFTER_PASSTHRU }}</autogen>
+
+  <!-- number -->
+
+  <autogen>__KeyToKey__ KeyCode::KEY_0, KeyCode::KEY_0, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::KEY_1, KeyCode::KEY_1, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::KEY_2, KeyCode::KEY_2, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::KEY_4, KeyCode::KEY_4, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::KEY_5, KeyCode::KEY_5, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::KEY_6, KeyCode::KEY_6, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::KEY_7, KeyCode::KEY_7, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::KEY_8, KeyCode::KEY_8, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::KEY_9, KeyCode::KEY_9, {{ AFTER_PASSTHRU }}</autogen>
+
+  <!-- symbol -->
+
+  <autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::BACKQUOTE, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::BACKSLASH, KeyCode::BACKSLASH, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, KeyCode::BRACKET_LEFT, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT, KeyCode::BRACKET_RIGHT, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::COMMA, KeyCode::COMMA, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::DOT, KeyCode::DOT, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::EQUAL, KeyCode::EQUAL, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::MINUS, KeyCode::MINUS, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::QUOTE, KeyCode::QUOTE, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::SEMICOLON, KeyCode::SEMICOLON, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::SLASH, KeyCode::SLASH, {{ AFTER_PASSTHRU }}</autogen>
+
+  <!-- special -->
+
+  <autogen>__KeyToKey__ KeyCode::DELETE, KeyCode::DELETE, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::ENTER, KeyCode::ENTER, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::ENTER_POWERBOOK, KeyCode::ENTER_POWERBOOK, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::ESCAPE, KeyCode::ESCAPE, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::FORWARD_DELETE, KeyCode::FORWARD_DELETE, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::HELP, KeyCode::HELP, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::RETURN, KeyCode::RETURN, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::SPACE, KeyCode::SPACE, {{ AFTER_PASSTHRU }}</autogen>
+  <autogen>__KeyToKey__ KeyCode::TAB, KeyCode::TAB, {{ AFTER_PASSTHRU }}</autogen>
+</root>
