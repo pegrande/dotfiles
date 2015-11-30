@@ -67,6 +67,8 @@ function git_color_icon() {
 # Modified example
 set_bash_prompt() {
   PS1="\n${COLOR_GRAY}\[\016\]l\[\017\]-(${COLOR_BLUE}\w${COLOR_GRAY})->\n\[\016\]m\[\017\]- $(git_color_icon) ${COLOR_LIGHT_GREEN}\$(__git_ps1 ' [ %s ]' )${COLOR_GRAY} --> ${COLOR_NONE}"
+
+  PS1="\n${COLOR_GRAY} (${COLOR_GRAY}\w${COLOR_GRAY}) $(git_color_icon) ${COLOR_GRAY}\$(__git_ps1 ' [ %s ]' )${COLOR_GRAY} -> ${COLOR_NONE}"
 }
 
 # Example Prompt
