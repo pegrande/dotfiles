@@ -14,6 +14,8 @@ alias gbr="git branch -r"
 alias com="git checkout master"
 alias push="git push origin head"
 alias gitx='open -a GitX .'
+alias githttps="git config --global url."https://".insteadOf git://"
+alias gitssh="git config --global url."git://".insteadOf https://"
 
 
 alias bi="bundle install"
