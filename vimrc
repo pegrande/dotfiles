@@ -30,7 +30,13 @@ Bundle 'kien/ctrlp.vim'
 " Uncomment to map ctrlp
 map <leader>f :let g:ctrlp_default_input = 0<cr>:CtrlP<cr>
 map <leader><leader>f :let g:ctrlp_default_input = 0<cr>:CtrlPClearCache<cr>:CtrlP<cr>
-Plugin 'JazzCore/ctrlp-cmatcher'
+
+" Plugin 'JazzCore/ctrlp-cmatcher'
+" let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+"
+Bundle 'FelikZ/ctrlp-py-matcher'
+let g:ctrlp_match_func = {'match' : 'pymatcher#PyMatch' }
+
 
 if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
@@ -44,8 +50,6 @@ else
   let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 endif
-
-let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 " Don't manage working directory
 let g:ctrlp_working_path_mode = 0
