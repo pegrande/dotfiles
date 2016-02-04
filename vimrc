@@ -69,7 +69,7 @@ map <leader>A :Ag! <C-R><C-W><CR>
 " Use ag for search, it's much faster than ack.
 " See https://github.com/ggreer/the_silver_searcher
 " on mac: brew install the_silver_searcher
-let g:agprg = 'ag --nogroup --nocolor --column --smart-case'
+let g:ag_prg = 'ag --nogroup --nocolor --column --smart-case'
 
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'vim-ruby/vim-ruby'
@@ -78,6 +78,7 @@ Bundle 'tpope/vim-eunuch'
 Bundle 'nono/vim-handlebars'
 Bundle 'slim-template/vim-slim'
 Bundle 'itspriddle/vim-jquery'
+Bundle 'fatih/vim-go'
 
 " Kills a buffer without closing a split, use ,w . Used in conjunction
 " with command-w, below...
