@@ -8,6 +8,10 @@ export PATH=$HOME/.bin:/usr/local/bin:/usr/local/bin/psql:$PATH
 export PATH=$PATH\:/usr/local/sbin
 export PATH=$PATH\:~/SDKs/android-sdk-macosx/tools:~/SDKs/android-sdk-macosx/platform-tools
 export ANDROID_HOME="/Users/jeff/SDKs/android-sdk-macosx"
+export WORKON_HOME=$HOME/.virtualenvs
+export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
+source $(brew --prefix)/bin/virtualenvwrapper.sh
+
 export EDITOR="vim"
 
 function current_git_branch {
