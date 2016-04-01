@@ -11,7 +11,6 @@ export ANDROID_HOME="/Users/jeff/SDKs/android-sdk-macosx"
 export WORKON_HOME=$HOME/.virtualenvs
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 source $(brew --prefix)/bin/virtualenvwrapper.sh
-
 export EDITOR="vim"
 
 function current_git_branch {
