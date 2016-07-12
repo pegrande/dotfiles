@@ -238,9 +238,11 @@ set noerrorbells
 set backspace=indent,eol,start    " allow backspace in insert mode
 set laststatus=2                  " always show the status bar
 set ttimeoutlen=5
-set cc=90
-hi ColorColumn ctermbg=236
-hi ColorColumn ctermfg=58
+
+" Highlight a column
+" set cc=90
+" hi ColorColumn ctermbg=236
+" hi ColorColumn ctermfg=58
 
 " function! HighlightSearch(
 "  if &hls
@@ -285,10 +287,16 @@ if exists('$ITERM_PROFILE')
 end
 
 " ====== Whitespace / Indentation ===============
-set nowrap               " don't wrap lines
+au BufNewfile,BufRead, *.py
+      \ set tabstop=4            " a tab is two spaces
+      \ set shiftwidth=4         " an autoindent (with <<) is two spaces
+      \ set softtabstop=4
+
 set tabstop=2            " a tab is two spaces
 set shiftwidth=2         " an autoindent (with <<) is two spaces
 set softtabstop=2
+set textwidth=79
+set nowrap               " don't wrap lines
 set expandtab            " use spaces, not tabs
 set autoindent
 set smartindent
@@ -335,7 +343,28 @@ augroup Miscellaneous
       \ | call setpos('.', pos)
 augroup END
 
+"
 " ================ Completion =======================
+"
+" Python Completion
+Bundle 'Valloric/YouCompleteMe'
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader><leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+"One issue with the goto definition above is that VIM by default doesn’t know 
+"anything about virtualenv, so you have to make VIM and YouCompleteMe aware of 
+"your virtualenv by adding the following lines of code to .vimrc:
+
+"python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
+
 set wildmode=longest,list
 set wildmenu
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem,public/javascripts/compiled " disable output and VCS files
