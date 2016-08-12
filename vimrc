@@ -122,14 +122,39 @@ map <leader>C :RunLastVimTmuxCommand<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'skalnik/vim-vroom'
 
-let g:vroom_map_keys = 0
-let g:vroom_write_all = 1
-let g:vroom_use_bundle_exec = 0
-let g:vroom_use_colors = 1
-let g:vroom_clear_screen = 0
-let g:vroom_use_vimux = 1
-map <leader>t :VroomRunTestFile<cr>
-map <leader>T :VroomRunNearestTest<cr>
+" let g:vroom_map_keys = 0
+" let g:vroom_write_all = 1
+" let g:vroom_use_bundle_exec = 0
+" let g:vroom_use_colors = 1
+" let g:vroom_clear_screen = 0
+" let g:vroom_use_vimux = 1
+" map <leader>t :VroomRunTestFile<cr>
+" map <leader>T :VroomRunNearestTest<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim-Test
+"
+" https://github.com/janko-m/vim-test
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Bundle 'janko-m/vim-test'
+
+" let test#strategy = "vimux"
+" let test#python#runnr = "nose"
+
+" map <leader>t :TestFile<cr>
+" map <leader>T :TestNearest<cr>
+"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim-Nose-Test
+"
+" https://github.com/pitluga/vimux-nose-test
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'pitluga/vimux-nose-test'
+
+map <leader>t :RunNoseTestBuffer<cr>
+map <leader>T :RunNoseTestFocused<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tab to indent or autocomplete depending on context
@@ -365,9 +390,18 @@ if 'VIRTUAL_ENV' in os.environ:
   execfile(activate_this, dict(__file__=activate_this))
 EOF
 
+" PEP8 
+Bundle 'nvie/vim-flake8'
+
+autocmd FileType python map <buffer> <leader>e :call Flake8()<cr>
+
+if exists("g:ctrlp_user_command")
+  unlet g:ctrlp_user_command
+endif
+
 set wildmode=longest,list
 set wildmenu
-set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem,public/javascripts/compiled " disable output and VCS files
+set wildignore+=*.o,*.out,*.obj,*.pyc,.git,*.rbc,*.class,.svn,*.gem,public/javascripts/compiled " disable output and VCS files
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz       " disable archive files
 set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/vendor/assets/*,*/.bundle/*,*/.sass-cache/*,bundle,jhw-cache  " ignore bundler and sass cache
 set wildignore+=*/public/system/*,public/javascripts/compiled,*/public/media/*  " ignore assets
