@@ -32,7 +32,7 @@ alias server="if [ -f script/server ] ; then script/server; else script/rails se
 alias mongrel="if [ -f script/server ] ; then script/server mongrel; else script/rails server mongrel; fi"
 
 alias load=". ~/.bash_profile"
-alias vimcolors="perl ~/.vim/.vim-256color.pl"
+alias vimcolors="perl ~/dotfiles/.vim-256color.pl"
 
 alias tmuxg="tmux new-session -t 0"
 
