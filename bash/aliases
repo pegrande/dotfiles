@@ -47,3 +47,5 @@ alias tmuxg="tmux new-session -t 0"
 
 alias mi="script/mergeq integration"
 alias mc="script/mergeq --continue"
+
+alias webclient='gulp clean && gulp serve --backend=local'
