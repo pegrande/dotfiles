@@ -153,6 +153,7 @@ Bundle 'skalnik/vim-vroom'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'pitluga/vimux-nose-test'
 
+" let g:NoseVirtualenv = "~/.virtualenvs/ocr/bin/activate"
 map <leader>t :RunNoseTestBuffer<cr>
 map <leader>T :RunNoseTestFocused<cr>
 
