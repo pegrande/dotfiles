@@ -369,6 +369,8 @@ augroup Miscellaneous
       \ | call setpos('.', pos)
 augroup END
 
+au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+
 "
 " ================ Completion =======================
 "
