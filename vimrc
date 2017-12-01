@@ -222,14 +222,53 @@ Bundle 'altercation/vim-colors-solarized'
 " You'll probably need this too:
 " https://github.com/jenius/Fontforge-Installer
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'Lokaltog/vim-powerline'
+" Bundle 'Lokaltog/vim-powerline'
 
-let g:Powerline_symbols = 'fancy'
-let g:Powerline_stl_path_style = 'relative'
-call Pl#Theme#RemoveSegment('fugitive:branch')
-call Pl#Theme#RemoveSegment('fileformat')
-call Pl#Theme#RemoveSegment('fileencoding')
-call Pl#Theme#RemoveSegment('scrollpercent')
+" let g:Powerline_symbols = 'fancy'
+" let g:Powerline_stl_path_style = 'relative'
+" call Pl#Theme#RemoveSegment('fugitive:branch')
+" call Pl#Theme#RemoveSegment('fileformat')
+" call Pl#Theme#RemoveSegment('fileencoding')
+" call Pl#Theme#RemoveSegment('scrollpercent')
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Airline
+"
+" Replacing powerline
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'bling/vim-airline'
+
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airlinesymbols')
+let g:airlinesymbols = {}
+endif
+"     " airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+
+let g:airline_mode_map = {
+    \ '__' : '-',
+    \ 'n'  : 'N',
+    \ 'i'  : 'I',
+    \ 'R'  : 'R',
+    \ 'c'  : 'C',
+    \ 'v'  : 'V',
+    \ 'V'  : 'V',
+    \ '^V' : 'V',
+    \ 's'  : 'S',
+    \ 'S'  : 'S',
+    \ '^S' : 'S',
+    \ }
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Nerdtree
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'scrooloose/nerdtree'
 
 filetype plugin indent on
 
@@ -375,9 +414,9 @@ au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 " ================ Completion =======================
 "
 " Python Completion
-Bundle 'Valloric/YouCompleteMe'
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader><leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" Bundle 'Valloric/YouCompleteMe'
+" let g:ycm_autoclose_preview_window_after_completion=1
+" map <leader><leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "One issue with the goto definition above is that VIM by default doesn’t know 
 "anything about virtualenv, so you have to make VIM and YouCompleteMe aware of 
