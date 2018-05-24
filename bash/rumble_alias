@@ -1,0 +1,27 @@
+alias pg-local='pgcli postgres://"$PG_LOCAL_USER":"$PG_LOCAL_PASS"@localhost:5432/rumble'
+alias rethink-tunnel='ssh -i ~/.ssh/rumble-staff.pem -fN -L 22015:localhost:29015 ubuntu@ec2-35-165-194-161.us-west-2.compute.amazonaws.com'
+
+alias prodserverv='ssh -vvv -i ~/.ssh/rumble-staff.pem ubuntu@ec2-35-165-194-161.us-west-2.compute.amazonaws.com'
+alias prodserver='ssh -i ~/.ssh/rumble-staff.pem ubuntu@ec2-35-165-194-161.us-west-2.compute.amazonaws.com'
+alias prodtunnel='ssh -i ~/.ssh/rumble-staff.pem -fN -L 5433:localhost:5432 ubuntu@ec2-35-165-194-161.us-west-2.compute.amazonaws.com'
+alias pg-prod='pgcli postgres://"$PG_PROD_USER":"$PG_PROD_PASS"@localhost:5433/rumble_beta'
+
+alias devserver='ssh -i ~/.ssh/rumble-staff.pem ubuntu@ec2-34-213-149-6.us-west-2.compute.amazonaws.com'
+alias devtunnel='ssh -i ~/.ssh/rumble-staff.pem -fN -L 5434:localhost:5432 ubuntu@ec2-34-213-149-6.us-west-2.compute.amazonaws.com'
+alias pg-dev='pgcli postgres://"$PG_DEV_USER":"$PG_DEV_PASS"@localhost:5434/rumble_beta'
+
+alias stageserver='ssh -i ~/.ssh/rumble-staff.pem ubuntu@ec2-34-217-251-103.us-west-2.compute.amazonaws.com'
+alias stagetunnel='ssh -i ~/.ssh/rumble-staff.pem -fN -L 5435:localhost:5432 ubuntu@ec2-34-217-251-104.us-west-2.compute.amazonaws.com'
+alias pg-stage='pgcli postgres://"$PG_STAGE_USER":"$PG_STAGE_PASS"@localhost:5434/rumble_beta'
+
+alias fixserver='ssh -i ~/.ssh/rumble-staff.pem ubuntu@ec2-34-210-49-78.us-west-2.compute.amazonaws.com'
+alias fixtunnel='ssh -i ~/.ssh/rumble-staff.pem -fN -L 5438:localhost:5432 ubuntu@ec2-34-210-49-78.us-west-2.compute.amazonaws.com'
+alias pg-fix='pgcli postgres:/monkey:bananaslamjamma@localhost:5438/rumble_beta'
+
+alias rm-cd-agent='ssh -i ~/.ssh/rumble-staff.pem ubuntu@ec2-34-213-79-11.us-west-2.compute.amazonaws.com'
+alias rm-cd-server='ssh -i ~/.ssh/rumble-staff.pem ubuntu@ec2-34-212-246-7.us-west-2.compute.amazonaws.com'
+
+source ~/.pg_local_creds.env
+source ~/.pg_dev_creds.env
+source ~/.pg_stage_creds.env
+source ~/.pg_prod_creds.env

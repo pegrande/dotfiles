@@ -1,17 +1,19 @@
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-#export CC=/usr/local/bin/gcc-4.9
-#export CPP=/usr/local/bin/cpp-4.9
-#export CXX=/usr/local/bin/g++-4.9
-
 export PATH=$HOME/.bin:/usr/local/bin:/usr/local/bin/psql:$PATH
 export PATH=$PATH\:/usr/local/sbin
 export PATH=$PATH\:~/SDKs/android-sdk-macosx/tools:~/SDKs/android-sdk-macosx/platform-tools
 export ANDROID_HOME="/Users/jeff/SDKs/android-sdk-macosx"
 export WORKON_HOME=$HOME/.virtualenvs
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
-source $(brew --prefix)/bin/virtualenvwrapper.sh
+# source $(brew --prefix)/bin/virtualenvwrapper.sh
 export EDITOR="vim"
+export PATH=$PATH\:/usr/local/sbin
+
+export GOPATH=$HOME/Developer/go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
 
 function current_git_branch {
   git branch | grep ^* | sed s/*\ //
@@ -39,6 +41,7 @@ fi
 
 source ~/.bash/colors
 source ~/.bash/aliases
+source ~/.bash/rumble_alias
 
 # git prompt goodnes
 GIT_PS1_SHOWDIRTYSTATE=true

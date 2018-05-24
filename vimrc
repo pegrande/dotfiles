@@ -111,6 +111,8 @@ map <leader>q :VimuxPromptCommand 'exit'<cr><cr>
 map <leader>c :VimuxPromptCommand<cr>
 map <leader>C :RunLastVimTmuxCommand<cr>
 
+map <leader>z :!clear; python %:p<cr>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vroom
 "
@@ -137,13 +139,13 @@ Bundle 'skalnik/vim-vroom'
 " https://github.com/janko-m/vim-test
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Bundle 'janko-m/vim-test'
+Bundle 'janko-m/vim-test'
 
-" let test#strategy = "vimux"
-" let test#python#runnr = "nose"
+let test#strategy = "vimux"
+let test#python#runnr = "unittest"
 
-" map <leader>t :TestFile<cr>
-" map <leader>T :TestNearest<cr>
+map <leader>t :TestFile<cr>
+map <leader>T :TestNearest<cr>
 "
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -151,11 +153,11 @@ Bundle 'skalnik/vim-vroom'
 "
 " https://github.com/pitluga/vimux-nose-test
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'pitluga/vimux-nose-test'
+" Bundle 'pitluga/vimux-nose-test'
 
 " let g:NoseVirtualenv = "~/.virtualenvs/ocr/bin/activate"
-map <leader>t :RunNoseTestBuffer<cr>
-map <leader>T :RunNoseTestFocused<cr>
+" map <leader>t :RunNoseTestBuffer<cr>
+" map <leader>T :RunNoseTestFocused<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tab to indent or autocomplete depending on context
@@ -269,6 +271,9 @@ let g:airline_mode_map = {
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'scrooloose/nerdtree'
+
+Bundle 'vim-python/python-syntax'
+let g:python_highlight_all = 1
 
 filetype plugin indent on
 

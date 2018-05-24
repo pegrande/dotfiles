@@ -3,3 +3,6 @@
 .DS_Store
 .config/
 dump.rdb
+rethinkdb_data/
+rumbled.conf
+debug
