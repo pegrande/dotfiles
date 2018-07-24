@@ -49,3 +49,4 @@ alias mi="script/mergeq integration"
 alias mc="script/mergeq --continue"
 
 alias webclient='gulp clean && gulp serve --backend=local'
+alias packdev='~/Developer/go/src/github.com/RumbleMonkey/rumbled/web-client/node_modules/.bin/webpack --env=dev'
