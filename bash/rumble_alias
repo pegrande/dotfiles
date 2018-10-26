@@ -11,10 +11,12 @@ alias devserver='ssh -i ~/.ssh/rumble-staff.pem ubuntu@ec2-34-213-149-6.us-west-
 alias devtunnel='ssh -i ~/.ssh/rumble-staff.pem -fN -L 5434:localhost:5432 ubuntu@ec2-34-213-149-6.us-west-2.compute.amazonaws.com'
 alias pg-dev='pgcli postgres://"$PG_DEV_USER":"$PG_DEV_PASS"@localhost:5434/rumble_beta'
 
-alias ci.habitat='ssh -i ~/.ssh/rumble-dev.pem ubuntu@10.0.19.128'
-alias alpha.habitat='ssh -i ~/.ssh/rumble-dev.pem ubuntu@10.0.16.16'
-alias broker.habitat='ssh -i ~/.ssh/rumble-dev.pem ubuntu@10.0.28.48'
-alias ovpn='ssh -i "~/.ssh/rumble-dev.pem" ubuntu@ec2-54-201-227-21.us-west-2.compute.amazonaws.com'
+alias ssh.ci='ssh -i ~/.ssh/rumble-dev.pem ubuntu@10.0.19.128'
+alias ssh.alpha='ssh -i ~/.ssh/rumble-dev.pem ubuntu@10.0.16.16'
+alias ssh.broker='ssh -i ~/.ssh/rumble-dev.pem ubuntu@10.0.28.48'
+alias ssh.vpn='ssh -i "~/.ssh/rumble-dev.pem" ubuntu@ec2-54-201-227-21.us-west-2.compute.amazonaws.com'
+alias ssh.rm='ssh -i "~/.ssh/rumble-dev.pem" ubuntu@ec2-54-149-193-58.us-west-2.compute.amazonaws.com'
+alias ssh.rm.linux='ssh -i "~/.ssh/rumble-aws.pem" ec2-user@ec2-34-217-60-162.us-west-2.compute.amazonaws.com'
 
 alias awslogin='aws ecr get-login --no-include-email'
 
