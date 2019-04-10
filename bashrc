@@ -20,6 +20,7 @@ export GOPATH=$HOME/Developer/go
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOPATH/src/github.com/rumblemonkey/tools/mac
 
 # Add grpc_cli to path
 export PATH=$PATH\:~/Developer/tools/grpc/bins/opt
@@ -62,12 +63,12 @@ GIT_PS1_SHOWUPSTREAM=verbose
 function git_color_icon() {
   local git_status="$(git status 2> /dev/null)"
 
-  if [[ $git_status =~ "Changes not staged for commit" ]]; then
-    echo -e ${COLOR_RED}🚨
-  elif [[ $git_status =~ "Untracked files" ]]; then
-    echo -e ${COLOR_RED}🚨
+  if [[ $git_status =~ "Untracked files" ]]; then
+    echo -e ${COLOR_RED}‼️
+  elif [[ $git_status =~ "Changes not staged for commit" ]]; then
+    echo -e ${COLOR_RED}❗
   elif [[ $git_status =~ "Changes to be committed" ]]; then
-    echo -e ${COLOR_YELLOW}🌕
+    echo -e ${COLOR_YELLOW}👨🏾‍🚀
   elif [[ $git_status =~ "Your branch is ahead of" ]]; then
     echo -e ${COLOR_GREEN}🚀
   elif [[ $git_status =~ "Your branch is behind" ]]; then
