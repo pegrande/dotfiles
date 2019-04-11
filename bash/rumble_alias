@@ -18,14 +18,19 @@ source ~/.pg_stage_creds.env
 source ~/.pg_prod_creds.env
 source ~/.rds_creds.env
 
-connect() {
-  ssh -i ~/.ssh/rumble-dev.pem "ubuntu@$1"
-}
-
 pgconnect() {
   pgcli postgres://$RDS_USER:$RDS_PASS@$1:5432/$2
 }
 
 habitat() {
-  aws ec2 describe-instances --filters Name=vpc-id,Values=vpc-0d71e957847fea897 --query 'Reservations[].Instances[].[PrivateIpAddress,InstanceId,Tags[?Key==`Name`].Value[]]' --output text | sed '$!N;s/\n/ /'
+  aws ec2 describe-instances --filters Name=vpc-id,Values=vpc-0d71e957847fea897 --query 'Reservations[].Instances[].[PrivateIpAddress,InstanceId,Tags[?Key==`Name`].Value[]]' --output text | sed '$!N;s/\n/ /' | sort -k3
+}
+
+connect() {
+  ip=$(aws ec2 describe-instances --filters \
+  Name=vpc-id,Values=vpc-0d71e957847fea897 --query \
+  'Reservations[].Instances[].[PrivateIpAddress,InstanceId,Tags[?Key==`Name`].Value[]]' \
+  --output text | sed '$!N;s/\n/ /' \
+  | grep $1 | awk '{print $1}')
+  ssh -i ~/.ssh/rumble-dev.pem "ubuntu@$ip"
 }
