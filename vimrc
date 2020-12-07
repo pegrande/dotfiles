@@ -79,6 +79,8 @@ Bundle 'nono/vim-handlebars'
 Bundle 'slim-template/vim-slim'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'fatih/vim-go'
+Bundle 'maxmellon/vim-jsx-pretty'
+Bundle 'mlaursen/vim-react-snippets'
 
 " Kills a buffer without closing a split, use ,w . Used in conjunction
 " with command-w, below...
