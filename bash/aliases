@@ -18,7 +18,7 @@ alias push="git push origin head"
 alias gitx='open -a GitX .'
 alias githttps="git config --global url."https://".insteadOf git://"
 alias gitssh="git config --global url."git://".insteadOf https://"
-alias updatedir="find . -name .git -type d -execdir git remote update --prune ';'"
+alias updatedir="find . -name .git -type d -execdir pwd \; -execdir git remote update --prune ';'"
 
 
 alias bi="bundle install"
