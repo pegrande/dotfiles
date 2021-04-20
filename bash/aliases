@@ -18,6 +18,7 @@ alias push="git push origin head"
 alias gitx='open -a GitX .'
 alias githttps="git config --global url."https://".insteadOf git://"
 alias gitssh="git config --global url."git://".insteadOf https://"
+alias updatedir="find . -name .git -type d -execdir git remote update --prune ';'"
 
 
 alias bi="bundle install"
@@ -44,9 +45,6 @@ alias tmuxg="tmux new-session -t 0"
 ### }
 
 ### alias n='name_tab'
-
-alias mi="script/mergeq integration"
-alias mc="script/mergeq --continue"
 
 alias webclient='gulp clean && gulp serve --backend=local'
 alias packdev='~/Developer/go/src/github.com/RumbleMonkey/rumbled/web-client/node_modules/.bin/webpack --env=dev'
