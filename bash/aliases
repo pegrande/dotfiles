@@ -1,4 +1,5 @@
 alias psqlstart="sudo sysctl -w kern.sysv.shmall=65536;sudo sysctl -w kern.sysv.shmmax=61751296;pg_ctl -D /usr/local/var/postgres start"
+alias psqlstop="pg_ctl -D /usr/local/var/postgres stop"
 alias mysqlstart="mysql.server start"
 alias redisstart="redis-server /usr/local/etc/redis.conf"
 alias ls="ls -G"
@@ -18,8 +19,7 @@ alias push="git push origin head"
 alias gitx='open -a GitX .'
 alias githttps="git config --global url."https://".insteadOf git://"
 alias gitssh="git config --global url."git://".insteadOf https://"
-alias updatedir="find . -name .git -type d -execdir pwd \; -execdir git remote update --prune ';'"
-
+alias updatedirs="find . -name .git -type d -execdir pwd \; -execdir git remote update --prune ';'"
 
 alias bi="bundle install"
 alias bakedb="bundle exec rake db:migrate db:test:prepare"
