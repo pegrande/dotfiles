@@ -112,6 +112,7 @@ function name_tab() {
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="/usr/local/dotnet:$PATH"
 
 __git_complete qm _git_checkout
 export NVM_DIR="$HOME/.nvm"
