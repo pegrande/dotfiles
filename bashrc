@@ -52,7 +52,6 @@ fi
 
 source ~/.bash/colors
 source ~/.bash/aliases
-source ~/.bash/rumble_alias
 
 # git prompt goodnes
 GIT_PS1_SHOWDIRTYSTATE=true
@@ -105,6 +104,17 @@ PROMPT_COMMAND=set_bash_prompt
 function name_tab() {
   echo -ne "\033]0;$1\007"
 }
+
+# curl -o ~/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+if [ -f ~/.git-prompt.sh ]; then
+  source ~/.git-prompt.sh
+fi
+
+# curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+> ~/.git-completion.bash
+if [ -f ~/.git-completion.bash ]; then
+  source ~/.git-completion.bash
+fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 # [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
